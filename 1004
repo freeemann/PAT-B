@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<string.h>
+int main(){
+	int n=0;
+	
+	char temp_name[15];
+	char temp_id[15];
+	int temp_score=0;
+	
+	char high_name[15];
+	char high_id[15];
+	int high_score=-1;
+	
+	char low_name[15];
+	char low_id[15];
+	int low_score=101;
+	
+	scanf("%d",&n);
+	for(n;n>0;n--){
+		scanf("%s%s%d",&temp_name,&temp_id,&temp_score);
+		if(temp_score>high_score){
+			strcpy(high_name,temp_name);
+			strcpy(high_id,temp_id);
+			high_score = temp_score;
+		}
+		if(temp_score<low_score){
+			strcpy(low_name,temp_name);
+			strcpy(low_id,temp_id);
+			low_score = temp_score;
+		}
+	}
+	printf("%s %s\n",high_name,high_id);
+	printf("%s %s\n",low_name,low_id);
+	return 0;
+}
